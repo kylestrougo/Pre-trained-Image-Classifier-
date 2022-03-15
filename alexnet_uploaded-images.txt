@@ -1,0 +1,80 @@
+Command Line Arguments:
+     dir = uploaded_images/ 
+    arch = alexnet 
+ dogfile = dognames.txt
+{'Frog_01.jpg': ['frog'], 'Dog_02.jpg': ['dog'], 'Dog_01.jpg': ['dog'], 'House_01.jpg': ['house']}
+
+Pet Image Label Dictionary has 4 key-value pairs.
+Below are 4 of them:
+ 1 key:                    Frog_01.jpg  label:                       frog
+ 2 key:                     Dog_02.jpg  label:                        dog
+ 3 key:                     Dog_01.jpg  label:                        dog
+ 4 key:                   House_01.jpg  label:                      house
+
+**FINAL DICT: 
+
+{'Frog_01.jpg': ['frog', 'tree frog, tree-frog', 1], 'Dog_02.jpg': ['dog', 'ant, emmet, pismire', 0], 'Dog_01.jpg': ['dog', 'pug, pug-dog', 1], 'House_01.jpg': ['house', 'palace', 0]}
+
+     MATCH:
+
+                   Frog_01.jpg: 
+Real:                       frog   Classifier:           tree frog, tree-frog
+
+                    Dog_01.jpg: 
+Real:                        dog   Classifier:                   pug, pug-dog
+
+ NOT A MATCH:
+
+                    Dog_02.jpg: 
+Real:                        dog   Classifier:            ant, emmet, pismire
+
+                  House_01.jpg: 
+Real:                      house   Classifier:                         palace
+
+# Total Images 4 # Matches: 2 # NOT Matches: 2
+
+     MATCH:
+
+                   Frog_01.jpg: 
+Real:                       frog   Classifier:           tree frog, tree-frog  
+PetLabelDog: 0  ClassLabelDog: 0
+
+                    Dog_01.jpg: 
+Real:                        dog   Classifier:                   pug, pug-dog  
+PetLabelDog: 1  ClassLabelDog: 1
+
+ NOT A MATCH:
+
+                    Dog_02.jpg: 
+Real:                        dog   Classifier:            ant, emmet, pismire  
+PetLabelDog: 1  ClassLabelDog: 0
+
+                  House_01.jpg: 
+Real:                      house   Classifier:                         palace  
+PetLabelDog: 0  ClassLabelDog: 0
+
+# Total Images 4 # Matches: 2 # NOT Matches: 2
+
+ ** Statistics from calculates_results_stats() function:
+N Images:  4  N Dog Images:  2  N NotDog Images:  2 
+Pct Corr dog:  50.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:  50.0
+
+ ** Check Statistics - calculated from this function as a check:
+N Images:  4  N Dog Images:  2  N NotDog Images:  2 
+Pct Corr dog:  50.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:  50.0
+
+
+*** Results Summary for CNN Model Architecture alexnet ***
+N Images            :   4
+N Dog Images        :   2
+N Not-Dog Images    :   2
+ 
+pct_match           : 50.000000
+pct_correct_dogs    : 50.000000
+pct_correct_breed   : 50.000000
+pct_correct_notdogs : 100.000000
+
+INCORRECT Dog/NOT Dog Assignments:
+Pet label: dog   Classifier: ant, emmet, pismire
+
+** Total Elapsed Runtime: 0:0:0
